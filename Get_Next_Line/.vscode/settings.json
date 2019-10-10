@@ -1,0 +1,7 @@
+{
+	"editor.insertSpaces": false,
+	"files.trimTrailingWhitespace": true,
+	"files.associations": {
+		"get_next_line.h": "c"
+	}
+}
