@@ -6,7 +6,7 @@
 /*   By: ksean <ksean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:31:15 by ksean             #+#    #+#             */
-/*   Updated: 2019/10/10 19:21:37 by ksean            ###   ########.fr       */
+/*   Updated: 2019/10/10 22:49:56 by ksean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int get_next_line(int fd, char **line)
 	static char		*out[1200];
 	size_t i = 0;
 
-	if((ret = read(fd,buf,BUFF_SIZE)) != -1)
+	while((ret = read(fd,buf,BUFF_SIZE)) != -1)
 		{
 			while(i != BUFF_SIZE+1)
 				{

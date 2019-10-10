@@ -6,7 +6,7 @@
 /*   By: ksean <ksean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 20:51:08 by ksean             #+#    #+#             */
-/*   Updated: 2019/10/10 19:19:46 by ksean            ###   ########.fr       */
+/*   Updated: 2019/10/10 22:41:09 by ksean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int main(void)
 	// 				return (-1);
 	// 			}
 	// 	}
+	get_next_line(fd, &line);
+	get_next_line(fd, &line);
 	get_next_line(fd, &line);
 	ft_putstr(line);
 	//printf("%i", a);
