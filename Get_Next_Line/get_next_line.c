@@ -6,7 +6,7 @@
 /*   By: ksean <ksean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:31:15 by ksean             #+#    #+#             */
-/*   Updated: 2019/10/12 22:13:56 by ksean            ###   ########.fr       */
+/*   Updated: 2019/10/13 19:18:21 by ksean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,17 @@
 int	ft_strnchr(char *s, char c, size_t n)
 {
 	while(n > 0)
+	{
+		if(*s == c)
 		{
-			if(*s == c)
-				{
-					*s = '\0';
-					return (1);
-				}
-			// if (*s == '\0')
-			// 	return 	(0);
-			s++;
-			n--;
+			*s = '\0';  //отправить ссылку и n в др функцию и сохранитьё
+			return (1);
 		}
-		return (-1);
+		s++;
+		n--;
+	}
+	return (-1);
 }
-
-// int	ft_makestr(char *buf, char **line)
-// {
-// 	char *i;
-
-// 	i = ft_strchr(buf, '\n');
-// 	i = '\0';
-// 	ft_strcpy(*line, buf);
-// 	return 1;
-// }
 
 int get_next_line(int fd, char **line)
 {
@@ -46,8 +34,11 @@ int get_next_line(int fd, char **line)
 	static char		*out[10240];
 
 
-	if(!(out[fd] = ft_strnew(0)))
-		return (-1);
+	if(!out[fd])
+		{
+			if(!(out[fd] = ft_strnew(0)))
+			return (-1);
+		}
 	while ((ret = read(fd,buf, BUFF_SIZE)) > 0)
 		{
  			buf[ret] = '\0';
@@ -60,8 +51,6 @@ int get_next_line(int fd, char **line)
 			//printf("%s/////\n", out[fd]);
 			out[fd] = ft_strjoin(out[fd],buf);
 		}
-
-
 	return(1);
 }
 // if(ft_strnchr(buf, '\n', ret) == 1)
@@ -72,32 +61,15 @@ int get_next_line(int fd, char **line)
 
 
 
+// int	ft_makestr(char *buf, char **line)
+// {
+// 	char *i;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 	i = ft_strchr(buf, '\n');
+// 	i = '\0';
+// 	ft_strcpy(*line, buf);
+// 	return 1;
+// }
 
 
 // int get_next_line(int fd, char **line)
