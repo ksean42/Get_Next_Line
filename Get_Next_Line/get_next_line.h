@@ -6,7 +6,7 @@
 /*   By: ksean <ksean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:48:50 by ksean             #+#    #+#             */
-/*   Updated: 2019/10/11 13:44:31 by ksean            ###   ########.fr       */
+/*   Updated: 2019/10/24 18:07:47 by ksean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include "libft/libft.h"
+# include "limits.h"
 
 int	get_next_line(const int fd, char **line);
 

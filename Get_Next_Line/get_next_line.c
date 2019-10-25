@@ -6,7 +6,7 @@
 /*   By: ksean <ksean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:31:15 by ksean             #+#    #+#             */
-/*   Updated: 2019/10/21 21:15:46 by ksean            ###   ########.fr       */
+/*   Updated: 2019/10/24 18:07:22 by ksean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ int get_next_line(int fd, char **line)  /* The return value can be 1, 0 or -1 de
 {
 	int				ret;
 	char			buf[BUFF_SIZE+1];
-	static char		*out[10240];
+	static char		*out[OPEN_MAX];
 	char *tmp;
 
+	if(fd < 0)
+		return(-1);
 	if(out[fd] == NULL)
 		out[fd] = ft_strnew(0);
 	while ((ret = read(fd, buf, BUFF_SIZE)) != 0)
