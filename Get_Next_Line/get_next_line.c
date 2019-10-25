@@ -6,7 +6,7 @@
 /*   By: ksean <ksean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:31:15 by ksean             #+#    #+#             */
-/*   Updated: 2019/10/25 21:36:06 by ksean            ###   ########.fr       */
+/*   Updated: 2019/10/25 21:44:29 by ksean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ char	*ft_sub(char *str)
 	i = 0;
 	while (str[i] != '\n' && str[i] != '\0')
 		i++;
-	if(str[i] == '\n')
+	if (str[i] == '\n')
 		s = ft_strsub(str, (i + 1), ft_strlen(&(str[i + 1])));
 	else
-		return NULL;
+		return (NULL);
 	return (s);
 }
 
@@ -52,7 +52,6 @@ int		get_next_line(int fd, char **line)
 		out[fd] = ft_strnew(0);
 	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
 	{
-
 		buf[ret] = '\0';
 		tmp = out[fd];
 		out[fd] = ft_strjoin(tmp, buf);
@@ -61,7 +60,7 @@ int		get_next_line(int fd, char **line)
 			break ;
 	}
 	if (ret < 0)
-			return (-1);
+		return (-1);
 	if (ret > 0 || ft_strlen(out[fd]))
 	{
 		*line = ft_makestr(out[fd]);
